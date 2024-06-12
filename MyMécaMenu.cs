@@ -32,7 +32,7 @@ namespace MyMécaMenu
 
                 UIPanel panel = new UIPanel("MyMécaMenu", UIPanel.PanelType.Tab);
                 panel.SetTitle("Menu MyMécaMenu");
-                panel.AddTabLine("Fermer", ui => player.ClosePanel(ui));
+                panel.Addbutton("Fermer", ui => player.ClosePanel(ui));
                 panel.AddTabLine("Contacter le personnel", ui => player.Notify("MyMécaMemu", "Vous avez contacté le personnel , veuillez patienter quelques secondes."));
 
                 player.ShowPanelUI(panel);
