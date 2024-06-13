@@ -1,4 +1,4 @@
-﻿using Life;
+using Life;
 
 using Life.Network;
 using Life.UI;
@@ -18,7 +18,7 @@ namespace MyMécaMenu
         public override void OnPluginInit()
         {
             base.OnPluginInit();
-            Debug.Log("MyMécaMenu est initialisé avec succès !");
+            Debug.Log("Le Plugin MyMécaMenu est initialisé avec succès ! Amusez-vous .");
         }
 
         public override void OnPlayerInput(Player player, KeyCode keyCode, bool onUI)
@@ -28,12 +28,13 @@ namespace MyMécaMenu
             if (keyCode == KeyCode.F7)
             {
 
-                player.Notify("MyMécaMenu", "Seulement les Employé on le droit le lancer se menu");
+                player.Notify("MyMécaMenu", "Seulement les Employé on le droit le lancer se menu. Une amende de 1500€ peut étre appliqué en cas de rentrer dans le menu sans autorisation...");
 
                 UIPanel panel = new UIPanel("MyMécaMenu", UIPanel.PanelType.Tab);
                 panel.SetTitle("Menu MyMécaMenu");
-                panel.Addbutton("Fermer", ui => player.ClosePanel(ui));
-                panel.AddTabLine("Contacter le personnel", ui => player.Notify("MyMécaMemu", "Vous avez contacté le personnel , veuillez patienter quelques secondes."));
+                panel.AddButton("Quitter le menu", ui => player.ClosePanel(ui));
+                panel.AddTabLine("Contacter le personnel", ui => player.Notify("MyMécaMemu", "En Développement"));
+                panel.AddTabLine("En savoir plus sur ce panel", ui => player.SendText("Panel développé par Bastien Brefort . Pour le métier de Mécanicien . Je ne suis ni cértifié ni reconnu sur le serveur Nova-Life de MOD.... Je Tiens à remercier Martinxeur14 Pour ce plugin XD ."));
 
                 player.ShowPanelUI(panel);
             }
